@@ -39,6 +39,7 @@ const aggregationOptions = [
   { name: 'Controller', value: 'controller' },
   { name: 'Service', value: 'service' },
   { name: 'Pod', value: 'pod' },
+  { name: 'Container', value: 'container' },
 ]
 
 const accumulateOptions = [
@@ -155,7 +156,7 @@ const ReportsPage = () => {
         const allocationRange = resp.data
         for (const i in allocationRange) {
           // update cluster aggregations to use clusterName/clusterId names
-	  if (aggregateBy == 'cluster') {
+          if (aggregateBy == 'cluster') {
             for (const k in allocationRange[i]) {
               allocationRange[i][k].name = 'cluster-one';
             }
